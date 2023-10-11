@@ -1,0 +1,121 @@
+<!-- <h1 class="mb-5">Guglielmino {{jsonIn.nome}}</h1>
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" (click)="toggleSezione('datiAnagrafici')" [class.collapsed]="datiAnagrafici">
+                Dati anagrafici
+            </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample" [class.show]="datiAnagrafici">
+            <div class="accordion-body">
+                <form class="mt-4">
+                    <div class="row mb-4">
+                        <div class="col">
+                            <label for="nome">Nome:</label>
+                            <input type="text" name="nome" max="256" class="form-control mb-1" required [(ngModel)]="jsonIn.nome" #nome="ngModel" name="jsonIn.nome">
+
+                            <div *ngIf="nome.untouched">Obbligatorio <span class="text-danger">*</span>
+                            </div>
+                            <div *ngIf="nome.touched && nome.invalid" class="text-danger">Invalid value</div>
+                            <div *ngIf="nome.touched && nome.valid" class="text-success">Valid value</div>
+                        </div>
+                        <div class="col">
+                            <label for="cognome">Cognome:</label>
+                            <input type="text" name="cognome" max="256" class="form-control mb-1" required [(ngModel)]="jsonIn.cognome" #cognome="ngModel" name="jsonIn.cognome">
+
+                            <div *ngIf="cognome.untouched">Obbligatorio <span class="text-danger">*</span>
+                            </div>
+                            <div *ngIf="cognome.touched && cognome.invalid" class="text-danger">Invalid value</div>
+                            <div *ngIf="cognome.touched && cognome.valid" class="text-success">Valid value</div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" email class="form-control mb-1" required [(ngModel)]="jsonIn.email" #email="ngModel" name="jsonIn.email">
+
+                            <div *ngIf="email.untouched">Obbligatorio <span class="text-danger">*</span>
+                            </div>
+                            <div *ngIf="email.touched && email.invalid" class="text-danger">Invalid value</div>
+                            <div *ngIf="email.touched && email.valid" class="text-success">Valid value</div>
+                        </div>
+                        <div class="col">
+                            <label for="dataNascita">Data nascita:</label>
+                            <input type="date" min="1900-01-01" max="2024-01-01" name="dataNascita" class="form-control mb-1" required [(ngModel)]="jsonIn.dataNascita" #dataNascita="ngModel" name="jsonIn.dataNascita">
+
+                            <div *ngIf="dataNascita.untouched">Obbligatorio <span class="text-danger">*</span>
+                            </div>
+                            <div *ngIf="dataNascita.touched && dataNascita.invalid" class="text-danger">Invalid value</div>
+                            <div *ngIf="dataNascita.touched && dataNascita.valid" class="text-success">Valid value</div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <label for="comuneNascita">Luogo nascita</label>
+                            <select name="comuneNascita" class="form-control mb-1">
+                                <option value="nessuno">--</option>
+                                <option value="Candiolo">Candiolo</option>
+                                <option value="Chieri">Chieri</option>
+                                <option value="Moncalieri">Moncalieri</option>
+                                <option value="Nichelino">Nichelino</option>
+                                <option value="None">None</option>
+                                <option value="Rivarolo">Rivarolo</option>
+                                <option value="Stupinigi">Stupinigi</option>
+                                <option value="Torino">Torino</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label for="altezza">Altezza (in cm):</label>
+                            <input type="number" name="altezza" class="form-control mb-1" step="1" min="0" max="256">
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <label for="codiceFiscale">Codice fiscale:</label>
+                            <input type="text" name="codiceFiscale" class="form-control mb-1">
+                        </div>
+                        <div class="col">
+                            <label for="sesso">Sesso:</label>
+                            <select name="sesso" id="sesso" [(ngModel)]="jsonIn.sesso" value="" required>
+                                <option disabled value="">--</option>
+                                <option value="M">Maschio</option>
+                                <option value="F">Femmina</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" (click)="toggleSezione('percorsoStudi')" [class.collapsed]="percorsoStudi">
+                Percorso di studi
+            </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample" [class.show]="percorsoStudi">
+            <div class="accordion-body">
+                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" (click)="toggleSezione('competenze')" [class.collapsed]="competenze">
+                Competenze
+            </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample" [class.show]="competenze">
+            <div class="accordion-body">
+                <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+        </div>
+    </div>
+</div>
+-->
+
+<router-outlet></router-outlet>

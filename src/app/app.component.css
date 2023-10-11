@@ -1,0 +1,31 @@
+.mostra {
+    background-color: green;
+}
+.nascondi {
+    background-color: red;
+}
+
+.verde {
+    color: green;
+}
+.rosso {
+    color: red;
+}
+
+h1 {
+    color: blue;
+}
+
+input.ng-touched.ng-invalid {
+    border-color: red;
+    border-width: 2px;
+}
+input.ng-touched.ng-valid {
+    border-color: green;
+    border-width: 2px;
+}
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/
